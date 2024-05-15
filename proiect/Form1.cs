@@ -38,7 +38,14 @@ namespace proiect
                 }
             }
         }
+        private void ExportToExcelAndClone(Add_orar originalAppointment)
+        {
+            // Clone the original appointment
+            Add_orar clonedAppointment = (Add_orar)originalAppointment.Clone();
 
+            // Export the cloned appointment to Excel
+            clonedAppointment.ExportToExcel();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Stomatolog stomatolog = new Stomatolog();
@@ -69,8 +76,10 @@ namespace proiect
                     .Build();
 
                 AddAppointmentToDatabase(appointment);
-                show(); // Refresh the DataGridView
+                show();// Refresh the DataGridView
+                ExportToExcelAndClone(appointment);// Export clone to excel
             }
+
         }
 
         private void textBox2_Prenume_TextChanged(object sender, EventArgs e)
