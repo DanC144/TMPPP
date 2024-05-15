@@ -126,7 +126,7 @@ namespace proiect
                 connection.Open();
 
                 int idToDelete = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells["Id"].Value);
-
+                idToDelete = idToDelete - 1;
                 string query = "DELETE FROM Orar WHERE ID = @ID";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ID", idToDelete);
