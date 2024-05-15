@@ -28,9 +28,11 @@ namespace proiect
 
         public string data {  get; set; }
 
+        public string oradata { get; set; }
 
 
-        public void get_data(string stomatolog_,string surname, string name,string ora_,string nr_telefon_, string procedura_,string data_)
+
+        public void get_data(string stomatolog_,string surname, string name,string ora_,string nr_telefon_, string procedura_,string data_, string oradata_)
         {
             stomatolog = stomatolog_;
             nume = surname;
@@ -39,13 +41,14 @@ namespace proiect
             nr_telefon = nr_telefon_;
             procedura = procedura_;
             data = data_;
+            oradata = oradata_;
         }
         
         public override void add()     
         {
             using (SqlConnection connection = new SqlConnection(@"Data Source = DESKTOP-9OBO5BD;Initial Catalog = TMPP; Integrated Security = True;Encrypt=False"))
             {
-                string Query = "insert into Orar (Ora, Stomatolog, Procedura, Nume, Prenume, Data,Nr_telefon) values (@Ora, @Stomatolog, @Procedura, @Nume, @Prenume, @Data,@Nr_telefon)";
+                string Query = "insert into Orar (Ora, Stomatolog, Procedura, Nume, Prenume, Data,Nr_telefon,OraData) values (@Ora, @Stomatolog, @Procedura, @Nume, @Prenume, @Data,@Nr_telefon,@OraData)";
                 SqlCommand command = new SqlCommand(Query, connection);
 
                 command.Parameters.AddWithValue("@Ora", ora);
@@ -55,6 +58,7 @@ namespace proiect
                 command.Parameters.AddWithValue("@Prenume", prenume);
                 command.Parameters.AddWithValue("@Data", data);
                 command.Parameters.AddWithValue("@Nr_telefon", nr_telefon);
+                command.Parameters.AddWithValue("@OraData", oradata);
 
 
 

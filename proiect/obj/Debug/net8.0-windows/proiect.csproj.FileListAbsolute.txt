@@ -46,3 +46,28 @@ C:\Users\danax\OneDrive\Рабочий стол\dan tmpp\dan tmpp\proiect\proiec
 C:\Users\danax\OneDrive\Рабочий стол\dan tmpp\dan tmpp\proiect\proiect\obj\Debug\net8.0-windows\proiect.pdb
 C:\Users\danax\OneDrive\Рабочий стол\dan tmpp\dan tmpp\proiect\proiect\obj\Debug\net8.0-windows\proiect.genruntimeconfig.cache
 C:\Users\danax\OneDrive\Рабочий стол\dan tmpp\dan tmpp\proiect\proiect\obj\Debug\net8.0-windows\ref\proiect.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.csproj.AssemblyReference.cache
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.Form1.resources
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.csproj.GenerateResource.cache
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.AssemblyInfoInputs.cache
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.AssemblyInfo.cs
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.csproj.CoreCompileInputs.cache
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.sourcelink.json
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\refint\proiect.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.pdb
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\proiect.exe
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\proiect.deps.json
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\proiect.runtimeconfig.json
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\proiect.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\proiect.pdb
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.csproj.CopyComplete
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.genruntimeconfig.cache
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\ref\proiect.dll

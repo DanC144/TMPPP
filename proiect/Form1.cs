@@ -58,6 +58,7 @@ namespace proiect
             Ora ora = new Ora();
             Procedura procedura = new Procedura();
             Data data = new Data();
+            Oradata oradata = new Oradata();
 
 
             if (comboBox1_Stomatolog.Text == "" || textBox1_Nume.Text == "" || textBox2_Prenume.Text == "" || textBox3_Nr_telefon.Text == "" || comboBox2_Procedura.Text == "" || comboBox1_ora.Text == "")
@@ -73,12 +74,12 @@ namespace proiect
                 ora.add(comboBox1_ora.Text);
                 procedura.add(comboBox2_Procedura.Text);
                 data.add(monthCalendar1.SelectionRange.Start.ToShortDateString());
-
+                oradata.add(comboBox1_ora.Text + monthCalendar1.SelectionRange.Start.ToShortDateString());
 
 
 
                 Add_orar adaugarebd = new Add_orar();
-                adaugarebd.get_data(stomatolog.Stomatolog_, nume.Nume_, prenume.Prenume_, ora.Ora_, nr_Telefon.Nr_telefon_, procedura.Procedura_, data.Data_);
+                adaugarebd.get_data(stomatolog.Stomatolog_, nume.Nume_, prenume.Prenume_, ora.Ora_, nr_Telefon.Nr_telefon_, procedura.Procedura_, data.Data_,oradata.Oradata_);
                 adaugarebd.add();
                 show();
             }

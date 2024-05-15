@@ -95,7 +95,17 @@ namespace proiect
             Data_ = t;
         }
     }
+    public class Oradata
+    {
 
+        public string Oradata_;
+
+
+        public void add(string t)
+        {
+            Oradata_ = t;
+        }
+    }
 
 }
 

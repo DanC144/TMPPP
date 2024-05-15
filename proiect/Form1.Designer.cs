@@ -148,7 +148,7 @@
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(124, 338);
+            monthCalendar1.Location = new Point(157, 341);
             monthCalendar1.Margin = new Padding(6, 5, 6, 5);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 10;
@@ -160,12 +160,12 @@
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(514, 269);
+            dataGridView1.Size = new Size(1209, 269);
             dataGridView1.TabIndex = 11;
             // 
             // button1
             // 
-            button1.Location = new Point(212, 497);
+            button1.Location = new Point(124, 510);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(78, 20);
@@ -176,7 +176,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(418, 497);
+            button2.Location = new Point(356, 510);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(78, 20);
@@ -209,7 +209,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(988, 563);
+            ClientSize = new Size(1703, 563);
             Controls.Add(comboBox1_ora);
             Controls.Add(label6_ora);
             Controls.Add(button2);

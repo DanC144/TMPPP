@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danax\\OneDrive\\Desktop\\dan tmpp\\dan tmpp\\proiect\\proiect\\proiect.csproj": {}
+    "C:\\Users\\danax\\OneDrive\\Desktop\\gittt\\TMPPP\\proiect\\proiect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danax\\OneDrive\\Desktop\\dan tmpp\\dan tmpp\\proiect\\proiect\\proiect.csproj": {
+    "C:\\Users\\danax\\OneDrive\\Desktop\\gittt\\TMPPP\\proiect\\proiect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danax\\OneDrive\\Desktop\\dan tmpp\\dan tmpp\\proiect\\proiect\\proiect.csproj",
+        "projectUniqueName": "C:\\Users\\danax\\OneDrive\\Desktop\\gittt\\TMPPP\\proiect\\proiect.csproj",
         "projectName": "proiect",
-        "projectPath": "C:\\Users\\danax\\OneDrive\\Desktop\\dan tmpp\\dan tmpp\\proiect\\proiect\\proiect.csproj",
+        "projectPath": "C:\\Users\\danax\\OneDrive\\Desktop\\gittt\\TMPPP\\proiect\\proiect.csproj",
         "packagesPath": "C:\\Users\\danax\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danax\\OneDrive\\Desktop\\dan tmpp\\dan tmpp\\proiect\\proiect\\obj\\",
+        "outputPath": "C:\\Users\\danax\\OneDrive\\Desktop\\gittt\\TMPPP\\proiect\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

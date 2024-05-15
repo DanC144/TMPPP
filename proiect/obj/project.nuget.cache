@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WJNyb3jTo3GhIwnso42AB2EJzMTyykQqBi3dtD3AGFbXTN3JMjpx8AO9x5dSGK+nUMSAIyFqGcmcAUbg/hIWsA==",
+  "dgSpecHash": "CvaFkm3g+3rmv/u5JQSGbelwny1Q/lTkOPDiGT734HDI+ZbjDAcfsdxuWeqG6DvQUmsGKE/KFPT7pywPiqvk/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danax\\OneDrive\\Desktop\\dan tmpp\\dan tmpp\\proiect\\proiect\\proiect.csproj",
+  "projectFilePath": "C:\\Users\\danax\\OneDrive\\Desktop\\gittt\\TMPPP\\proiect\\proiect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danax\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\danax\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
