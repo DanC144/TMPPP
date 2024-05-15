@@ -15,7 +15,6 @@ namespace proiect
 
         private void comboBox1_Stomatolog_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         void show()
@@ -30,10 +29,7 @@ namespace proiect
                 try
                 {
                     connection.Open();
-                    // Fill the DataTable with data from the database
                     dataAdapter.Fill(dataTable);
-
-                    // Bind the DataTable to the DataGridView
                     dataGridView1.DataSource = dataTable;
                 }
                 catch (Exception ex)
@@ -43,14 +39,8 @@ namespace proiect
             }
         }
 
-
-
-        
-
         private void button1_Click(object sender, EventArgs e)
         {
-
-
             Stomatolog stomatolog = new Stomatolog();
             Nume nume = new Nume();
             Prenume prenume = new Prenume();
@@ -60,52 +50,43 @@ namespace proiect
             Data data = new Data();
             Oradata oradata = new Oradata();
 
-
             if (comboBox1_Stomatolog.Text == "" || textBox1_Nume.Text == "" || textBox2_Prenume.Text == "" || textBox3_Nr_telefon.Text == "" || comboBox2_Procedura.Text == "" || comboBox1_ora.Text == "")
             {
                 MessageBox.Show("Completeaza toate campurile");
             }
             else
             {
-                stomatolog.add(comboBox1_Stomatolog.Text);
-                nume.add(textBox1_Nume.Text);
-                prenume.add(textBox2_Prenume.Text);
-                nr_Telefon.add(textBox3_Nr_telefon.Text);
-                ora.add(comboBox1_ora.Text);
-                procedura.add(comboBox2_Procedura.Text);
-                data.add(monthCalendar1.SelectionRange.Start.ToShortDateString());
-                oradata.add(comboBox1_ora.Text + monthCalendar1.SelectionRange.Start.ToShortDateString());
+                AddOrarBuilder builder = new AddOrarBuilder();
+                Add_orar appointment = builder
+                    .WithStomatolog(comboBox1_Stomatolog.Text)
+                    .WithNume(textBox1_Nume.Text)
+                    .WithPrenume(textBox2_Prenume.Text)
+                    .WithNr_Telefon(textBox3_Nr_telefon.Text)
+                    .WithOra(comboBox1_ora.Text)
+                    .WithProcedura(comboBox2_Procedura.Text)
+                    .WithData(monthCalendar1.SelectionRange.Start.ToShortDateString())
+                    .WithOradata(comboBox1_ora.Text + monthCalendar1.SelectionRange.Start.ToShortDateString())
+                    .Build();
 
-
-
-                Add_orar adaugarebd = new Add_orar();
-                adaugarebd.get_data(stomatolog.Stomatolog_, nume.Nume_, prenume.Prenume_, ora.Ora_, nr_Telefon.Nr_telefon_, procedura.Procedura_, data.Data_,oradata.Oradata_);
-                adaugarebd.add();
-                show();
+                AddAppointmentToDatabase(appointment);
+                show(); // Refresh the DataGridView
             }
-
-
-
         }
 
         private void textBox2_Prenume_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox1_Nume_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox3_Nr_telefon_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void comboBox2_Procedura_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -115,30 +96,34 @@ namespace proiect
                 int rowIndex = dataGridView1.SelectedRows[0].Index;
                 MessageBox.Show($"Index of selected row: {rowIndex}");
 
-                // Șterge rândul din DataGridView
+                // Delete the row from the DataGridView
                 dataGridView1.Rows.RemoveAt(rowIndex);
 
-                // Construiește interogarea SQL pentru a șterge rândul din baza de date
-                using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-9OBO5BD;Initial Catalog=TMPP;Integrated Security=True;Encrypt=False"))
-                {
-                    connection.Open();
-
-                  
-                    int idToDelete = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells["Id"].Value);
-
-                    string query = "DELETE FROM Orar WHERE ID = @ID";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@ID", idToDelete);
-
-                    // Execută comanda SQL de ștergere
-                    command.ExecuteNonQuery();
-                }
+                // Delete the row from the database
+                DeleteAppointmentFromDatabase(rowIndex);
             }
         }
 
+        private void AddAppointmentToDatabase(Add_orar appointment)
+        {
+            AppointmentDatabaseManager manager = new AppointmentDatabaseManager();
+            manager.AddAppointmentToDatabase(appointment);
+        }
+
+        private void DeleteAppointmentFromDatabase(int rowIndex)
+        {
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-9OBO5BD;Initial Catalog=TMPP;Integrated Security=True;Encrypt=False"))
+            {
+                connection.Open();
+
+                int idToDelete = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells["Id"].Value);
+
+                string query = "DELETE FROM Orar WHERE ID = @ID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", idToDelete);
+
+                command.ExecuteNonQuery();
+            }
+        }
     }
-
-
-
-
 }

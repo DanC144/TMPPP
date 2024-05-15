@@ -14,6 +14,58 @@ namespace proiect
     
     }
 
+    public class AddOrarBuilder
+    {
+        private Add_orar _addOrar = new Add_orar();
+        public AddOrarBuilder WithNume(string nume)
+        {
+            _addOrar.nume = nume;
+            return this;
+        }
+
+        public AddOrarBuilder WithPrenume(string prenume)
+        {
+            _addOrar.prenume = prenume;
+            return this;
+        }
+
+        public AddOrarBuilder WithStomatolog(string stomatolog)
+        {
+            _addOrar.stomatolog = stomatolog;
+            return this;
+        }
+
+        public AddOrarBuilder WithOra(string ora)
+        {
+            _addOrar.ora = ora;
+            return this;
+        }
+        public AddOrarBuilder WithNr_Telefon(string nr_telefon)
+        {
+            _addOrar.nr_telefon = nr_telefon;
+            return this;
+        }
+        public AddOrarBuilder WithProcedura(string procedura)
+        {
+            _addOrar.procedura = procedura;
+            return this;
+        }
+        public AddOrarBuilder WithData(string data)
+        {
+            _addOrar.data = data;
+            return this;
+        }
+
+        public AddOrarBuilder WithOradata(string oradata)
+        {
+            _addOrar.oradata = oradata;
+            return this;
+        }
+        public Add_orar Build()
+        {
+            return _addOrar;
+        }
+    }
 
     public class Add_orar:Data_base
     {
