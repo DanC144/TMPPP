@@ -5,9 +5,16 @@ using System.Windows.Forms;
 
 namespace proiect
 {
-    public partial class Form1 : Form
+    public sealed partial class Form1 : Form
     {
-        public Form1()
+        // Private static instance of the same class that is the only instance of the class.
+        private static readonly Lazy<Form1> lazy = new Lazy<Form1>(() => new Form1());
+
+        // Public static property to get the instance.
+        public static Form1 Instance => lazy.Value;
+
+        // Private constructor to prevent direct instantiation.
+        private Form1()
         {
             InitializeComponent();
             show();
@@ -19,7 +26,7 @@ namespace proiect
 
         void show()
         {
-            using (SqlConnection connection = new SqlConnection(@"Data Source = DESKTOP-9OBO5BD;Initial Catalog = TMPP; Integrated Security = True;Encrypt=False"))
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-9OBO5BD;Initial Catalog=TMPP;Integrated Security=True;Encrypt=False"))
             {
                 string Query = "SELECT * FROM Orar";
                 SqlCommand command = new SqlCommand(Query, connection);
@@ -38,6 +45,7 @@ namespace proiect
                 }
             }
         }
+
         private void ExportToExcelAndClone(Add_orar originalAppointment)
         {
             // Clone the original appointment
@@ -46,16 +54,9 @@ namespace proiect
             // Export the cloned appointment to Excel
             clonedAppointment.ExportToExcel();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Stomatolog stomatolog = new Stomatolog();
-            Nume nume = new Nume();
-            Prenume prenume = new Prenume();
-            Nr_telefon nr_Telefon = new Nr_telefon();
-            Ora ora = new Ora();
-            Procedura procedura = new Procedura();
-            Data data = new Data();
-            Oradata oradata = new Oradata();
 
             if (comboBox1_Stomatolog.Text == "" || textBox1_Nume.Text == "" || textBox2_Prenume.Text == "" || textBox3_Nr_telefon.Text == "" || comboBox2_Procedura.Text == "" || comboBox1_ora.Text == "")
             {
@@ -76,10 +77,9 @@ namespace proiect
                     .Build();
 
                 AddAppointmentToDatabase(appointment);
-                show();// Refresh the DataGridView
-                ExportToExcelAndClone(appointment);// Export clone to excel
+                show(); // Refresh the DataGridView
+                ExportToExcelAndClone(appointment); // Export clone to Excel
             }
-
         }
 
         private void textBox2_Prenume_TextChanged(object sender, EventArgs e)
@@ -133,6 +133,15 @@ namespace proiect
 
                 command.ExecuteNonQuery();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
         }
     }
 }

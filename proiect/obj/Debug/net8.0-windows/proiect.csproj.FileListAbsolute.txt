@@ -47,7 +47,6 @@ C:\Users\danax\OneDrive\Рабочий стол\dan tmpp\dan tmpp\proiect\proiec
 C:\Users\danax\OneDrive\Рабочий стол\dan tmpp\dan tmpp\proiect\proiect\obj\Debug\net8.0-windows\proiect.genruntimeconfig.cache
 C:\Users\danax\OneDrive\Рабочий стол\dan tmpp\dan tmpp\proiect\proiect\obj\Debug\net8.0-windows\ref\proiect.dll
 C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.csproj.AssemblyReference.cache
-C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.Form1.resources
 C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.csproj.GenerateResource.cache
 C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.AssemblyInfoInputs.cache
@@ -123,3 +122,5 @@ C:\Users\danax\OneDrive\Desktop\TMPPP-main\proiect\obj\Debug\net8.0-windows\refi
 C:\Users\danax\OneDrive\Desktop\TMPPP-main\proiect\obj\Debug\net8.0-windows\proiect.pdb
 C:\Users\danax\OneDrive\Desktop\TMPPP-main\proiect\obj\Debug\net8.0-windows\proiect.genruntimeconfig.cache
 C:\Users\danax\OneDrive\Desktop\TMPPP-main\proiect\obj\Debug\net8.0-windows\ref\proiect.dll
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.Form1.resources
+C:\Users\danax\OneDrive\Desktop\gittt\TMPPP\proiect\obj\Debug\net8.0-windows\proiect.Properties.Resources.resources

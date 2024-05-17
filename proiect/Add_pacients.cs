@@ -53,20 +53,20 @@ namespace proiect
 
         public void add(string t)
         {
-             Nr_telefon_ = t;
+            Nr_telefon_ = t;
         }
     }
 
     public class Ora
     {
-        
+
         public string Ora_;
 
         public void add(string t)
         {
             Ora_ = t;
         }
-    
+
     }
 
 
@@ -76,7 +76,7 @@ namespace proiect
         public string Procedura_;
 
 
-       public void add(string t)
+        public void add(string t)
         {
             Procedura_ = t;
         }

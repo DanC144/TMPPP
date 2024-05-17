@@ -44,6 +44,8 @@
             button2 = new Button();
             label6_ora = new Label();
             comboBox1_ora = new ComboBox();
+            button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -99,6 +101,7 @@
             // 
             // comboBox1_Stomatolog
             // 
+            comboBox1_Stomatolog.BackColor = Color.YellowGreen;
             comboBox1_Stomatolog.FormattingEnabled = true;
             comboBox1_Stomatolog.Items.AddRange(new object[] { "Iulia", "Andrian", "Andrei" });
             comboBox1_Stomatolog.Location = new Point(124, 51);
@@ -110,6 +113,7 @@
             // 
             // textBox1_Nume
             // 
+            textBox1_Nume.BackColor = Color.YellowGreen;
             textBox1_Nume.Location = new Point(127, 103);
             textBox1_Nume.Margin = new Padding(2);
             textBox1_Nume.Name = "textBox1_Nume";
@@ -119,6 +123,7 @@
             // 
             // textBox2_Prenume
             // 
+            textBox2_Prenume.BackColor = Color.YellowGreen;
             textBox2_Prenume.Location = new Point(127, 157);
             textBox2_Prenume.Margin = new Padding(2);
             textBox2_Prenume.Name = "textBox2_Prenume";
@@ -128,6 +133,7 @@
             // 
             // textBox3_Nr_telefon
             // 
+            textBox3_Nr_telefon.BackColor = Color.YellowGreen;
             textBox3_Nr_telefon.Location = new Point(127, 210);
             textBox3_Nr_telefon.Margin = new Padding(2);
             textBox3_Nr_telefon.Name = "textBox3_Nr_telefon";
@@ -137,6 +143,7 @@
             // 
             // comboBox2_Procedura
             // 
+            comboBox2_Procedura.BackColor = Color.YellowGreen;
             comboBox2_Procedura.FormattingEnabled = true;
             comboBox2_Procedura.Items.AddRange(new object[] { "Tratarea cariei", "Înălbire", "Extracție", "Control", "Plombare", "Proteza" });
             comboBox2_Procedura.Location = new Point(127, 311);
@@ -148,6 +155,7 @@
             // 
             // monthCalendar1
             // 
+            monthCalendar1.BackColor = Color.FloralWhite;
             monthCalendar1.Location = new Point(157, 341);
             monthCalendar1.Margin = new Padding(6, 5, 6, 5);
             monthCalendar1.Name = "monthCalendar1";
@@ -160,29 +168,31 @@
             dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1209, 269);
+            dataGridView1.Size = new Size(1033, 269);
             dataGridView1.TabIndex = 11;
             // 
             // button1
             // 
+            button1.BackColor = Color.YellowGreen;
             button1.Location = new Point(124, 510);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(78, 20);
             button1.TabIndex = 12;
             button1.Text = "Submit";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
+            button2.BackColor = Color.YellowGreen;
             button2.Location = new Point(356, 510);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(78, 20);
             button2.TabIndex = 13;
             button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label6_ora
@@ -197,6 +207,7 @@
             // 
             // comboBox1_ora
             // 
+            comboBox1_ora.BackColor = Color.YellowGreen;
             comboBox1_ora.FormattingEnabled = true;
             comboBox1_ora.Items.AddRange(new object[] { "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00" });
             comboBox1_ora.Location = new Point(127, 260);
@@ -205,11 +216,38 @@
             comboBox1_ora.Size = new Size(306, 23);
             comboBox1_ora.TabIndex = 15;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.YellowGreen;
+            button3.BackgroundImageLayout = ImageLayout.None;
+            button3.Cursor = Cursors.Hand;
+            button3.Location = new Point(991, 507);
+            button3.Name = "button3";
+            button3.Size = new Size(132, 23);
+            button3.TabIndex = 16;
+            button3.Text = "Undo last changes";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.YellowGreen;
+            button4.Cursor = Cursors.Hand;
+            button4.Location = new Point(1016, 407);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 17;
+            button4.Text = "Salvează";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1703, 563);
+            BackColor = Color.PaleGreen;
+            ClientSize = new Size(1517, 563);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(comboBox1_ora);
             Controls.Add(label6_ora);
             Controls.Add(button2);
@@ -252,5 +290,7 @@
         private Button button2;
         private Label label6_ora;
         private ComboBox comboBox1_ora;
+        private Button button3;
+        private Button button4;
     }
 }
