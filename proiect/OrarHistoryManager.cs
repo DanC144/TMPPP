@@ -16,90 +16,36 @@ namespace proiect
             _connectionString = connectionString;
         }
 
-        public void AddHistoryEntry(Add_orar appointment)
+        public void AddHistoryEntry()
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string Query = "INSERT INTO OrarHistory (Ora, Stomatolog, Procedura, Nume, Prenume, Data, Nr_telefon, OraData) VALUES (@Ora, @Stomatolog, @Procedura, @Nume, @Prenume, @Data, @Nr_telefon, @OraData)";
-                SqlCommand command = new SqlCommand(Query, connection);
-
-                command.Parameters.AddWithValue("@Ora", appointment.ora);
-                command.Parameters.AddWithValue("@Stomatolog", appointment.stomatolog);
-                command.Parameters.AddWithValue("@Procedura", appointment.procedura);
-                command.Parameters.AddWithValue("@Nume", appointment.nume);
-                command.Parameters.AddWithValue("@Prenume", appointment.prenume);
-                command.Parameters.AddWithValue("@Data", appointment.data);
-                command.Parameters.AddWithValue("@Nr_telefon", appointment.nr_telefon);
-                command.Parameters.AddWithValue("@OraData", appointment.oradata);
-
                 connection.Open();
-                command.ExecuteNonQuery();
-            }
-        }
-
-        public List<Add_orar> GetHistoryEntries()
-        {
-            List<Add_orar> historyEntries = new List<Add_orar>();
-
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
-                string Query = "SELECT * FROM OrarHistory";
-                SqlCommand command = new SqlCommand(Query, connection);
-
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    Add_orar historyEntry = new Add_orar
-                    {
-                        ora = reader["Ora"].ToString(),
-                        stomatolog = reader["Stomatolog"].ToString(),
-                        procedura = reader["Procedura"].ToString(),
-                        nume = reader["Nume"].ToString(),
-                        prenume = reader["Prenume"].ToString(),
-                        data = reader["Data"].ToString(),
-                        nr_telefon = reader["Nr_telefon"].ToString(),
-                        oradata = reader["OraData"].ToString()
-                    };
-
-                    historyEntries.Add(historyEntry);
-                }
-            }
-
-            return historyEntries;
-        }
-
-        public void ClearHistory()
-        {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
-            {
                 string Query = "DELETE FROM OrarHistory";
                 SqlCommand command = new SqlCommand(Query, connection);
-
-                connection.Open();
                 command.ExecuteNonQuery();
+                Query = "INSERT INTO OrarHistory (Ora, Stomatolog, Procedura, Nume, Prenume, Data, Nr_telefon, OraData)  SELECT Ora, Stomatolog, Procedura, Nume, Prenume, Data, Nr_telefon, OraData FROM Orar ";
+                command = new SqlCommand(Query, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Snapshot saved");
+
             }
         }
 
-        public void RestoreFromHistory(Add_orar appointment)
+
+        public void RestoreFromHistory()
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                string Query = "INSERT INTO SavedTable (Ora, Stomatolog, Procedura, Nume, Prenume, Data, Nr_telefon, OraData) VALUES (@Ora, @Stomatolog, @Procedura, @Nume, @Prenume, @Data, @Nr_telefon, @OraData)";
-                SqlCommand command = new SqlCommand(Query, connection);
-
-                command.Parameters.AddWithValue("@Ora", appointment.ora);
-                command.Parameters.AddWithValue("@Stomatolog", appointment.stomatolog);
-                command.Parameters.AddWithValue("@Procedura", appointment.procedura);
-                command.Parameters.AddWithValue("@Nume", appointment.nume);
-                command.Parameters.AddWithValue("@Prenume", appointment.prenume);
-                command.Parameters.AddWithValue("@Data", appointment.data);
-                command.Parameters.AddWithValue("@Nr_telefon", appointment.nr_telefon);
-                command.Parameters.AddWithValue("@OraData", appointment.oradata);
-
                 connection.Open();
+                string Query = "DELETE FROM Orar";
+                SqlCommand command = new SqlCommand(Query, connection);
                 command.ExecuteNonQuery();
+                Query = "INSERT INTO Orar (Ora, Stomatolog, Procedura, Nume, Prenume, Data, Nr_telefon, OraData) SELECT Ora, Stomatolog, Procedura, Nume, Prenume, Data, Nr_telefon, OraData FROM OrarHistory ";
+                command = new SqlCommand(Query, connection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Restored");
+
             }
         }
     }

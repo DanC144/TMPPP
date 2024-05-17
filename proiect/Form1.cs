@@ -13,10 +13,13 @@ namespace proiect
         // Public static property to get the instance.
         public static Form1 Instance => lazy.Value;
 
+        private readonly OrarHistoryManager _orarHistoryManager;
+
         // Private constructor to prevent direct instantiation.
         private Form1()
         {
             InitializeComponent();
+            _orarHistoryManager = new OrarHistoryManager(@"Data Source=DESKTOP-9OBO5BD;Initial Catalog=TMPP;Integrated Security=True;Encrypt=False");
             show();
         }
 
@@ -32,7 +35,6 @@ namespace proiect
                 SqlCommand command = new SqlCommand(Query, connection);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
-
                 try
                 {
                     connection.Open();
@@ -134,14 +136,16 @@ namespace proiect
                 command.ExecuteNonQuery();
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
-
+            _orarHistoryManager.RestoreFromHistory();
+            show();
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
+            _orarHistoryManager.AddHistoryEntry();
+            show();
         }
+
     }
 }
