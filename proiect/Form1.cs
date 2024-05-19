@@ -107,11 +107,13 @@ namespace proiect
                 int rowIndex = dataGridView1.SelectedRows[0].Index;
                 MessageBox.Show($"Index of selected row: {rowIndex}");
 
-                // Delete the row from the DataGridView
-                dataGridView1.Rows.RemoveAt(rowIndex);
 
                 // Delete the row from the database
                 DeleteAppointmentFromDatabase(rowIndex);
+
+                // Delete the row from the DataGridView
+                dataGridView1.Rows.RemoveAt(rowIndex);
+
             }
         }
 
@@ -128,12 +130,15 @@ namespace proiect
                 connection.Open();
 
                 int idToDelete = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells["Id"].Value);
-                idToDelete = idToDelete - 1;
-                string query = "DELETE FROM Orar WHERE ID = @ID";
+                string query = "DELETE FROM Orar WHERE Id = @Id";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@ID", idToDelete);
+                command.Parameters.AddWithValue("@Id", idToDelete);
 
-                command.ExecuteNonQuery();
+                int affectedRows = command.ExecuteNonQuery();
+                if (affectedRows == 0)
+                {
+                    MessageBox.Show("No record was deleted. Please check the ID and try again.");
+                }
             }
         }
         private void button3_Click(object sender, EventArgs e)
@@ -143,8 +148,8 @@ namespace proiect
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            _orarHistoryManager.AddHistoryEntry();
-            show();
+           _orarHistoryManager.AddHistoryEntry();
+           show();
         }
 
     }
