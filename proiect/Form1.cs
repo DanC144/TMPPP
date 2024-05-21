@@ -23,11 +23,7 @@ namespace proiect
             show();
         }
 
-        private void comboBox1_Stomatolog_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        void show()
+        private void show()
         {
             using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-9OBO5BD;Initial Catalog=TMPP;Integrated Security=True;Encrypt=False"))
             {
@@ -59,7 +55,6 @@ namespace proiect
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (comboBox1_Stomatolog.Text == "" || textBox1_Nume.Text == "" || textBox2_Prenume.Text == "" || textBox3_Nr_telefon.Text == "" || comboBox2_Procedura.Text == "" || comboBox1_ora.Text == "")
             {
                 MessageBox.Show("Completeaza toate campurile");
@@ -78,46 +73,14 @@ namespace proiect
                     .WithOradata(comboBox1_ora.Text + monthCalendar1.SelectionRange.Start.ToShortDateString())
                     .Build();
 
-                AddAppointmentToDatabase(appointment);
+                IAppointment adaptedAppointment = new AppointmentAdapter(appointment);
+                AddAppointmentToDatabase(adaptedAppointment);
                 show(); // Refresh the DataGridView
                 ExportToExcelAndClone(appointment); // Export clone to Excel
             }
         }
 
-        private void textBox2_Prenume_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_Nume_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox3_Nr_telefon_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void comboBox2_Procedura_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (this.dataGridView1.SelectedRows.Count > 0)
-            {
-                int rowIndex = dataGridView1.SelectedRows[0].Index;
-                MessageBox.Show($"Index of selected row: {rowIndex}");
-
-
-                // Delete the row from the database
-                DeleteAppointmentFromDatabase(rowIndex);
-
-                // Delete the row from the DataGridView
-                dataGridView1.Rows.RemoveAt(rowIndex);
-
-            }
-        }
-
-        private void AddAppointmentToDatabase(Add_orar appointment)
+        private void AddAppointmentToDatabase(IAppointment appointment)
         {
             AppointmentDatabaseManager manager = new AppointmentDatabaseManager();
             manager.AddAppointmentToDatabase(appointment);
@@ -141,16 +104,51 @@ namespace proiect
                 }
             }
         }
+
+        private void comboBox1_Stomatolog_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+        private void textBox2_Prenume_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_Nume_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox3_Nr_telefon_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox2_Procedura_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+                MessageBox.Show($"Index of selected row: {rowIndex}");
+
+                // Delete the row from the database
+                DeleteAppointmentFromDatabase(rowIndex);
+
+                // Delete the row from the DataGridView
+                dataGridView1.Rows.RemoveAt(rowIndex);
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             _orarHistoryManager.RestoreFromHistory();
             show();
         }
+
         private void button4_Click(object sender, EventArgs e)
         {
-           _orarHistoryManager.AddHistoryEntry();
-           show();
+            _orarHistoryManager.AddHistoryEntry();
+            show();
         }
-
     }
 }
